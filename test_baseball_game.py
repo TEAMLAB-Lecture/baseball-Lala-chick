@@ -146,7 +146,7 @@ class TestBaseballGame(unittest.TestCase):
                 for i in range(0, 899):
                     if int(input_list[i]) < int(target_number):
                         if self.is_duplicated_number(input_list[i]):
-                            self.assertTrue(
+                            self.assertFalse(
                                 "WRONG INPUT" in console[i + 2].upper())
                         else:
                             strikes, ball = self.get_strikes_or_ball(
@@ -156,7 +156,7 @@ class TestBaseballGame(unittest.TestCase):
                             self.assertIn(
                                 str(ball), console[i + 2].upper())
                     elif int(input_list[i]) > int(target_number):
-                        self.assertTrue(
+                        self.assertFalse(
                                 "WRONG INPUT" in console[i + 2].upper())
                     elif int(input_list[i]) == int(target_number):
                         self.assertIn(str(3), console[i + 2].upper())
@@ -171,7 +171,7 @@ class TestBaseballGame(unittest.TestCase):
                     if input_list[i].isdigit():
                         if int(input_list[i]) < int(target_number):
                             if self.is_duplicated_number(input_list[i]):
-                                self.assertTrue(
+                                self.assertFalse(
                                     "WRONG INPUT" in console[i + 2].upper())
                             else:
                                 strikes, ball = self.get_strikes_or_ball(
@@ -181,7 +181,7 @@ class TestBaseballGame(unittest.TestCase):
                                 self.assertIn(
                                     str(ball), console[i + 2].upper())
                         elif int(input_list[i]) > int(target_number):
-                            self.assertTrue(
+                            self.assertFalse(
                                     "WRONG INPUT" in console[i + 2].upper())
                         elif int(input_list[i]) == int(target_number):
                             self.assertIn(str(3), console[i + 2].upper())
@@ -192,7 +192,7 @@ class TestBaseballGame(unittest.TestCase):
                                 "Balls".upper(), console[i + 2].upper())
                     else:
                         if not(self.is_no(input_list[i])):
-                            self.assertTrue(
+                            self.assertFalse(
                                 "WRONG INPUT" in console[i + 2].upper())
                         else:
                             self.assertIn(
