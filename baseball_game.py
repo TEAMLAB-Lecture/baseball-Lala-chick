@@ -1,6 +1,3 @@
-토글보다 볼베이스로 변환하는게 좋을 거 같다
-오늘 들었던 강의 
-
 # -*- coding: utf-8 -*-
 
 import random
@@ -303,6 +300,7 @@ def main():
 
     print(is_yes("yEs"))
     print(is_yes("yesyesyes"))
+    print(is_duplicated_number(123))
 
 
     # ==================================
