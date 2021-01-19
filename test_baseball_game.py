@@ -121,7 +121,7 @@ class TestBaseballGame(unittest.TestCase):
                 bg.main()
                 console = fakeOutput.getvalue().strip().split("\n")
                 for i in range(2,6):
-                    self.assertTrue("WRONG INPUT" in console[i].upper())
+                    self.assertFalse("WRONG INPUT" in console[i].upper())
 
         input_list = [str(value) for value in range(101, 1000)]
         input_list.append("YES")
