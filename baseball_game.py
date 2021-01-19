@@ -281,11 +281,28 @@ def main():
     user_input = 999
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
-    # ===Modify codes below=============
-    # 위의 코드를 포함하여 자유로운 수정이 가능함
+
+    while user_input != "0":
+        user_input = input("Input guess number: ")
+        if is_validated_number(user_input) == False:
+            print("Wrong Input, Input again")
+            continue
+        strike, ball = get_strikes_or_ball(user_input, random_number)
+        print("Strikes : {}, Balls : {}".format(strike, ball))
+        if strike == 3:
+            one_more_input = input("You win, onemore(Y/N)?")
+            while is_yes(one_more_input) == False and is_no(one_more_input) == False:
+                print("Wrong Input, Input again")
+                one_more_input = input("You win, onemore(Y/N)?")
+
+            if is_yes(one_more_input):
+                random_number = str(get_not_duplicated_three_digit_number())
+                print("Random Number is : ", random_number)
+            elif is_no(one_more_input):
+                break
 
 
-    # ==================================
+    
     print("Thank you for using this program")
     print("End of the Game")
 
